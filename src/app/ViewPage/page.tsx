@@ -2,11 +2,16 @@
 import React, { useState } from 'react'
 import { useJournal } from '@/context/JournalContext'
 import HomepageHeader from '../components/homepageheader';
+type JournalEntry = {
+  date: string;
+  message: string;
+  rating: string;
+};
 export default function ViewEntry() {
   const { journalEntries } = useJournal();
-  const [selectedEntry, setSelectedEntry] = useState(null);
+  const [selectedEntry, setSelectedEntry] = useState<JournalEntry | null>(null);
 
-  const displayMessage = (entry: any) => {
+  const displayMessage = (entry: JournalEntry) => {
     setSelectedEntry(entry);
   };
 
@@ -60,3 +65,4 @@ export default function ViewEntry() {
     </div>
   );
 }
+
