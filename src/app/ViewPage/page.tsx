@@ -2,11 +2,16 @@
 import React, { useState } from 'react'
 import { useJournal } from '@/context/JournalContext'
 import HomepageHeader from '../components/homepageheader';
+type JournalEntry = {
+  date: string;
+  message: string;
+  rating: string;
+};
 export default function ViewEntry() {
   const { journalEntries } = useJournal();
-  const [selectedEntry, setSelectedEntry] = useState(null);
+  const [selectedEntry, setSelectedEntry] = useState<JournalEntry | null>(null);
 
-  const displayMessage = (entry: any) => {
+  const displayMessage = (entry: JournalEntry) => {
     setSelectedEntry(entry);
   };
 
@@ -16,12 +21,22 @@ export default function ViewEntry() {
 
   if (journalEntries.length === 0) return(
     <div>
-      <img src="assets/viewentries1.png" className='w-full lg:h-[300px] lg:mt-19 mt-36'></img>
+      <div className='relative text-center lg:m-0'>
+        <img src="/assets/headcard.png" className='w-full lg:h-[300px] h-[160px] lg:mt-0 mt-23'></img>
+        <div className="w-full absolute  text-center lg:mt-10">
+            <p className='text-white font-bold lg:text-[80px] lg:mt-18 text-[30px] -mt-18'>Let's view your entries</p>
+        </div>
+    </div>
      <p className='p-5 text-2xl font-bold lg:mt-9 mt-8 text-black'>No journal entries added yet !</p></div> );
 
   return (
     <div>
-    <img src="assets/viewentries1.png" className='w-full lg:h-[300px] lg:mt-19 mt-36'></img>
+    <div className='relative text-center lg:m-0'>
+        <img src="/assets/headcard.png" className='w-full lg:h-[300px] h-[160px] lg:mt-0 mt-23'></img>
+        <div className="w-full absolute  text-center lg:mt-10">
+            <p className='text-white font-bold lg:text-[80px] lg:mt-18 text-[30px] -mt-18'>Let's view your entries</p>
+        </div>
+    </div>
     <div className='p-5'>
       <h2 className='lg:text-[40px] text-2xl font-bold mb-7 mt-7 text-black font-mono'>Your Journal Entries</h2>
 
