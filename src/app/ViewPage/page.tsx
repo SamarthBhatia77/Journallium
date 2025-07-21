@@ -34,7 +34,7 @@ export default function ViewEntry() {
     <div className='relative text-center lg:m-0'>
         <img src="/assets/headcard.png" className='w-full lg:h-[300px] h-[160px] lg:mt-0 mt-23'></img>
         <div className="w-full absolute  text-center lg:mt-10">
-            <p className='text-white font-bold lg:text-[80px] lg:mt-18 text-[30px] -mt-18'>Let's view your entries</p>
+            <p className='text-white font-bold lg:text-[80px] lg:-mt-55 text-[30px] -mt-18'>Let's view your entries</p>
         </div>
     </div>
     <div className='p-5'>
