@@ -19,6 +19,7 @@ export default function ViewEntry() {
     setSelectedEntry(null);
   };
 
+
   if (journalEntries.length === 0) return(
     <div>
       <div className='relative text-center lg:m-0'>
@@ -41,7 +42,7 @@ export default function ViewEntry() {
       <h2 className='lg:text-[40px] text-2xl font-bold mb-7 mt-7 text-black font-mono'>Your Journal Entries</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {journalEntries.map((entry, index) => (
+        {[...journalEntries].reverse().map((entry, index) => (
             <div
             key={index}
             className='p-4 border rounded bg-white cursor-pointer hover:shadow-lg transform transition-transform duration-300 hover:scale-105'
