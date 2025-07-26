@@ -33,7 +33,7 @@ export function JournalProvider({ children }: { children: ReactNode }) {
     const addJournalEntry = (entry: Entry) => {
         setJournalEntries((prev) => [...prev, entry]);
     };
-
+    
     return (
         <JournalContext.Provider value={{ journalEntries, addJournalEntry }}>
             {children}
